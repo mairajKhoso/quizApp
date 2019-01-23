@@ -11,9 +11,9 @@ class Questions{
     let question:String
     let answer:Bool
     
-    init(questionText:String,correctAnswers:Bool) {
+    init(questionText:String,correctAnswer:Bool) {
         self.question = questionText
-        self.answer = correctAnswers
+        self.answer = correctAnswer
         
     }
 }
