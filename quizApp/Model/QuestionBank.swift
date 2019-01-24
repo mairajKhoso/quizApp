@@ -17,7 +17,7 @@ class QuestionBank{
     
     init(){
         // Creating a quiz item and appending it to the list
-        let item = Questions(questionText: "Ialamabad is the capital of Pakistan", correctAnswer: true)
+        let item = Questions(questionText: "Islamabad is the capital of Pakistan", correctAnswer: true)
         
         // Add the Question to the list of questions
         list.append(item)
@@ -33,7 +33,7 @@ class QuestionBank{
         
         list.append(Questions(questionText: "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.", correctAnswer: false))
         //
-        list.append(Questions(questionText: "It is illegal to pee in the Ocean in Portugal.", correctAnswer: true))
+        list.append(Questions(questionText: "Atomic bombs work by atomic fission.", correctAnswer: true))
         
         list.append(Questions(questionText: "You can lead a cow down stairs but not up stairs.", correctAnswer: false))
         
