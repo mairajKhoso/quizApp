@@ -18,6 +18,8 @@
 		187B475B21F84C7E00734CBA /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B475A21F84C7E00734CBA /* QuestionBank.swift */; };
 		187B476121F8C26400734CBA /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B475E21F8C26300734CBA /* ProgressHUD.m */; };
 		187B476221F8C26400734CBA /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 187B476021F8C26400734CBA /* ProgressHUD.bundle */; };
+		18EC0CAF21FB1B2A00E7D983 /* SelectCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC0CAE21FB1B2A00E7D983 /* SelectCourseViewController.swift */; };
+		18EC0CB121FB2B6400E7D983 /* English.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC0CB021FB2B6400E7D983 /* English.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		187B475E21F8C26300734CBA /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		187B475F21F8C26300734CBA /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		187B476021F8C26400734CBA /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		18EC0CAE21FB1B2A00E7D983 /* SelectCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCourseViewController.swift; sourceTree = "<group>"; };
+		18EC0CB021FB2B6400E7D983 /* English.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				187B475621F8493F00734CBA /* Questions.swift */,
 				187B475A21F84C7E00734CBA /* QuestionBank.swift */,
 				1873623C21F9A45000C4EB6C /* custom.swift */,
+				18EC0CB021FB2B6400E7D983 /* English.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 				183B9E8E21E336E6006703AA /* AppDelegate.swift */,
 				183B9E9021E336E8006703AA /* ViewController.swift */,
 				1873623E21F9BF8B00C4EB6C /* HomeViewController.swift */,
+				18EC0CAE21FB1B2A00E7D983 /* SelectCourseViewController.swift */,
 			);
 			path = " Controller";
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 				187B476121F8C26400734CBA /* ProgressHUD.m in Sources */,
 				183B9E9121E336E8006703AA /* ViewController.swift in Sources */,
 				1873623F21F9BF8B00C4EB6C /* HomeViewController.swift in Sources */,
+				18EC0CAF21FB1B2A00E7D983 /* SelectCourseViewController.swift in Sources */,
+				18EC0CB121FB2B6400E7D983 /* English.swift in Sources */,
 				183B9E8F21E336E6006703AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

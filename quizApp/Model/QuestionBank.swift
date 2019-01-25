@@ -8,13 +8,12 @@
 
 import Foundation
 
-class QuestionBank{
+class GeneralKnowledge{
     //property
     // questionList is the class Questions type
     // QuestionList is an array which holds all the questions
     var list = [Questions]()
-    //initializer that have no parameters because we do do not want to take any arguments
-    
+    //initializer that have no parameters because we do do not want to take any argument
     init(){
         // Creating a quiz item and appending it to the list
         let item = Questions(questionText: "Islamabad is the capital of Pakistan", correctAnswer: true)

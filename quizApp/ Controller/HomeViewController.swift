@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
             case .default:
                 print("default")
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SelectCourseViewController") as! SelectCourseViewController
                             self.present(nextViewController, animated:true, completion:nil)
 //                self.navigationController?.pushViewController(nextViewController, animated: true)
                 

@@ -2,28 +2,22 @@ import UIKit
 import AVFoundation
 class ViewController: UIViewController,AVSpeechSynthesizerDelegate {
 
-    
+
     //object of questionBank class
-    let allQuestion = QuestionBank()
+    
+    let allQuestion = GeneralKnowledge()
     var pickedAnswer:Bool = false
     var questionNumber:Int = 0
     var score:Int = 0
-    
     @IBOutlet weak var questionNumberLbl: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var scoreLbl: UILabel!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var progressLbl: UILabel!
-    
     let synth = AVSpeechSynthesizer()
-    //let utterance = AVSpeechUtterance(string: "mairaj is the boy")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        //utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        
         synth.delegate = self
         nextQuestion()
     }
@@ -32,21 +26,34 @@ class ViewController: UIViewController,AVSpeechSynthesizerDelegate {
         if questionNumber >= 13{
             if score < 8
             {
-                let alert = UIAlertController(title: "SORRY!", message: "You have got \(score) You are FAIL in this Quiz do you want to start again", preferredStyle: .alert)
+                let alert = UIAlertController(title: "SORRY!", message: "You have got \(score) score, You are FAIL in this Quiz do you want to start again", preferredStyle: .alert)
                 let restartAction = UIAlertAction(title: "Restart", style: .default) { (UIAlertAction) in
                     self.startOver()
                 }
                 alert.addAction(restartAction)
                 present(alert, animated: true, completion: nil)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                            print("default")
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                            self.present(nextViewController, animated:true, completion:nil)
+                    case .cancel:
+                        print("cancel")
+                    case .destructive:
+                        print("destructive")
+                    }
+                }))
             }
             else{
-                let alert = UIAlertController(title: "Awesome", message: "You have got \(score)", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Awesome", message: "You have got \(score) scores", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
                     case .default:
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.present(nextViewController, animated:true, completion:nil)
                     case .cancel:
                         print("cancel")
@@ -75,20 +82,8 @@ class ViewController: UIViewController,AVSpeechSynthesizerDelegate {
         let string = questionLbl.text!
         let utterance = AVSpeechUtterance(string: string)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-//
-//        let synth = AVSpeechSynthesizer()
-//        synth.delegate = self
         synth.speak(utterance)
     }
-    
-//    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-//        print("start")
-//    }
-    
-//
-//    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-//        print("ended")
-//    }
     func updateUI(){
         self.scoreLbl.text = "Score: \(score)"
         progressLbl.text = "\(questionNumber + 1)/13"
@@ -98,6 +93,10 @@ class ViewController: UIViewController,AVSpeechSynthesizerDelegate {
     func nextQuestion(){
         if questionNumber <= 12{
         questionLbl.text = allQuestion.list[questionNumber].question
+            let string = questionLbl.text!
+            let utterance = AVSpeechUtterance(string: string)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            synth.speak(utterance)
             updateUI()
         }
         
@@ -128,8 +127,5 @@ class ViewController: UIViewController,AVSpeechSynthesizerDelegate {
         questionNumber = 0
         nextQuestion()
     }
-    
-    
-
 }
 
